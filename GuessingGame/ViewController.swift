@@ -8,38 +8,50 @@
 
 import UIKit
 
-class ViewController: UIViewController, PropertyObserver {
-    private var viewModel : GameViewModel!
-    
+class ViewController: UIViewController {
     @IBOutlet var guessField : UITextField!
     @IBOutlet var guessButton : UIButton!
     @IBOutlet var guessLabel : UILabel!
     @IBOutlet var numberGuessLabel : UILabel!
     
-    func willChangePropertyName(propertyName: String, newPropertyValue: AnyObject?) {
-        switch propertyName {
-            case "message": guessLabel.text = newPropertyValue as? String
-            case "buttonLabel": guessButton.setTitle(newPropertyValue as? String, forState: UIControlState.Normal)
-            case "currentGuesses": numberGuessLabel.text = String(newPropertyValue as! Int)
-            case "guessField": guessField.text = newPropertyValue as? String
+    var viewModel: ViewModel! {
+        didSet {
+            viewModel.buttonText.bindAndFire {
+                [unowned self] in
+                self.guessButton.setTitle($0, forState: UIControlState.Normal)
+            }
             
-            default: return
+            viewModel.currentGuessesLabelText.bindAndFire {
+                [unowned self] in
+                self.numberGuessLabel.text = $0
+            }
+            
+            viewModel.guessFieldText.bindAndFire {
+                [unowned self] in
+                self.guessField.text = $0
+            }
+            
+            viewModel.message.bindAndFire {
+                [unowned self] in
+                self.guessLabel.text = $0
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = GameViewModel(delegate: self, lower: 0, upper: 20)
+        viewModel = GameViewModel(lower: 0, upper: 20)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func guessNumber() {
-        if (viewModel.currentState == GuessResult.Correct || viewModel.currentState == GuessResult.Lose) {
+        if (viewModel.currentState.value == GuessResult.Correct ||
+            viewModel.currentState.value == GuessResult.Lose) {
+                
             viewModel.playAgain = true
             return
         }

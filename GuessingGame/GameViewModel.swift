@@ -8,95 +8,76 @@
 
 import Foundation
 
-class GameViewModel {
-    weak var observer : PropertyObserver?
+class GameViewModel : ViewModel {
+    private var game : Game
+    private var lower : UInt32
+    private var upper : UInt32
     
-    private var game : Game!
-    private var lower : UInt32!
-    private var upper : UInt32!
+    var currentState : Dynamic<GuessResult?>
     
-    var currentState : GuessResult?
-    
-    var message : String = "" {
-        willSet(newValue) {
-            observer?.willChangePropertyName("message", newPropertyValue: newValue)
-        }
-    }
-    
-    var buttonLabel : String = "" {
-        willSet(newValue) {
-            observer?.willChangePropertyName("buttonLabel", newPropertyValue: newValue)
-        }
-    }
-    
-    var currentGuesses : Int = 0 {
-        willSet(newValue) {
-            observer?.willChangePropertyName("currentGuesses", newPropertyValue: newValue)
-        }
-    }
-    
-    var guessField : String = "" {
-        willSet(newValue) {
-            observer?.willChangePropertyName("guessField", newPropertyValue: newValue)
-        }
-    }
+    let message : Dynamic<String>
+    let buttonText : Dynamic<String>
+    let currentGuessesLabelText : Dynamic<String>
+    let guessFieldText : Dynamic<String>
     
     var playAgain : Bool =  false {
         willSet(play) {
             if (play) {
                 game = Game(lower: lower, upper: upper)
-                buttonLabel = "Guess"
-                guessField = ""
-                message = "Please enter a number between \(lower) and \(upper)"
-                currentGuesses = 0
-                currentState = nil
+                buttonText.value = "Guess"
+                currentGuessesLabelText.value = ""
+                message.value = "Please enter a number between \(lower) and \(upper)"
+                currentState.value = nil
             }
         }
     }
     
-    init(delegate : PropertyObserver?, lower : UInt32, upper : UInt32) {
+    init(lower : UInt32, upper : UInt32) {
         self.lower = lower
         self.upper = upper
-        self.observer = delegate
         
         game = Game(lower: lower, upper: upper)
         
-        // Property listeners are not triggered directly in initializer.
-        initLabels()
-    }
-    
-    private func initLabels() {
-        message = "Please enter a number between \(lower) and \(upper)"
-        buttonLabel = "Guess"
-        currentGuesses = 0
+        message = Dynamic("Please enter a number between \(lower) and \(upper)")
+        buttonText = Dynamic("Guess")
+        currentGuessesLabelText = Dynamic("")
+        guessFieldText = Dynamic("")
+        currentState = Dynamic(nil)
     }
     
     func guessNumber(guess : String?) {
         if let guessInt = guess?.toInt() {
-            currentState = game.guessNumber(UInt32(guessInt))
-            currentGuesses++
+            currentState.value = game.guessNumber(UInt32(guessInt))
+            
+            if let numberOfGuesses = currentGuessesLabelText.value.toInt() {
+                currentGuessesLabelText.value = String(numberOfGuesses + 1)
+            }
+            else {
+                currentGuessesLabelText.value = String(1)
+            }
+            
         }
         else {
-            message = "Please enter a valid number."
-            currentState = nil
+            message.value = "Please enter a valid number."
+            currentState.value = nil
             return
         }
         
-        switch currentState {
+        switch currentState.value {
             case .Some(.Lower):
-                message = "Please guess lower number."
+                message.value = "Please guess lower number."
             case .Some(.Higher):
-                message = "Please guess a higher number."
+                message.value = "Please guess a higher number."
             case .Some(.Lose):
-                message = "You lose!";
-                buttonLabel = "Play again?";
-                guessField = "";
-                currentGuesses = 0
+                message.value = "You lose!";
+                buttonText.value = "Play again?";
+                guessFieldText.value = "";
+                currentGuessesLabelText.value = ""
             case .Some(.Correct):
-                message = "You are correct.";
-                buttonLabel = "Play again?";
-                guessField = "";
-                currentGuesses = 0
+                message.value = "You are correct.";
+                buttonText.value = "Play again?";
+                guessFieldText.value = "";
+                currentGuessesLabelText.value = ""
             
             default: return
         }

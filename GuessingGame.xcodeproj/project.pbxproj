@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00F20D71AFFEB8D0010C8DD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */; };
+		B00F20D91AFFED250010C8DD /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00F20D81AFFED250010C8DD /* Dynamic.swift */; };
 		B01471701AFF899E007A1100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B014716F1AFF899E007A1100 /* AppDelegate.swift */; };
 		B01471721AFF899E007A1100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01471711AFF899E007A1100 /* ViewController.swift */; };
 		B01471751AFF899E007A1100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01471731AFF899E007A1100 /* Main.storyboard */; };
@@ -15,7 +17,6 @@
 		B01471861AFF899F007A1100 /* GuessingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01471851AFF899F007A1100 /* GuessingGameTests.swift */; };
 		B01471901AFF8D60007A1100 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B014718F1AFF8D60007A1100 /* Game.swift */; };
 		B01471921AFFB3AF007A1100 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01471911AFFB3AF007A1100 /* GameViewModel.swift */; };
-		B01471941AFFB3DB007A1100 /* PropertyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01471931AFFB3DB007A1100 /* PropertyObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B00F20D81AFFED250010C8DD /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		B014716A1AFF899E007A1100 /* GuessingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B014716E1AFF899E007A1100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B014716F1AFF899E007A1100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		B01471851AFF899F007A1100 /* GuessingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameTests.swift; sourceTree = "<group>"; };
 		B014718F1AFF8D60007A1100 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B01471911AFFB3AF007A1100 /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		B01471931AFFB3DB007A1100 /* PropertyObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,8 @@
 				B014716D1AFF899E007A1100 /* Supporting Files */,
 				B014718F1AFF8D60007A1100 /* Game.swift */,
 				B01471911AFFB3AF007A1100 /* GameViewModel.swift */,
-				B01471931AFFB3DB007A1100 /* PropertyObserver.swift */,
+				B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */,
+				B00F20D81AFFED250010C8DD /* Dynamic.swift */,
 			);
 			path = GuessingGame;
 			sourceTree = "<group>";
@@ -224,7 +227,8 @@
 				B01471921AFFB3AF007A1100 /* GameViewModel.swift in Sources */,
 				B01471721AFF899E007A1100 /* ViewController.swift in Sources */,
 				B01471901AFF8D60007A1100 /* Game.swift in Sources */,
-				B01471941AFFB3DB007A1100 /* PropertyObserver.swift in Sources */,
+				B00F20D91AFFED250010C8DD /* Dynamic.swift in Sources */,
+				B00F20D71AFFEB8D0010C8DD /* ViewModel.swift in Sources */,
 				B01471701AFF899E007A1100 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 				B014718B1AFF899F007A1100 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B014718C1AFF899F007A1100 /* Build configuration list for PBXNativeTarget "GuessingGameTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +436,7 @@
 				B014718E1AFF899F007A1100 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
