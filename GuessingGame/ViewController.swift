@@ -12,10 +12,10 @@ import Bond
 class ViewController: UIViewController {
     private var viewModel : GameViewModel!
     
-    @IBOutlet var guessField : UITextField!
-    @IBOutlet var guessButton : UIButton!
-    @IBOutlet var guessLabel : UILabel!
-    @IBOutlet var numberGuessLabel : UILabel!
+    @IBOutlet weak var guessField : UITextField!
+    @IBOutlet weak var guessButton : UIButton!
+    @IBOutlet weak var guessLabel : UILabel!
+    @IBOutlet weak var numberGuessLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
