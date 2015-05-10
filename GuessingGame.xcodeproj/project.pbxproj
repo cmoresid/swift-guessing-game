@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B00F20D71AFFEB8D0010C8DD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */; };
-		B00F20D91AFFED250010C8DD /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00F20D81AFFED250010C8DD /* Dynamic.swift */; };
+		12521B49E194E0677F228F35 /* Pods_GuessingGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CFE381617A3AB05D842704 /* Pods_GuessingGame.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B01471701AFF899E007A1100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B014716F1AFF899E007A1100 /* AppDelegate.swift */; };
 		B01471721AFF899E007A1100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01471711AFF899E007A1100 /* ViewController.swift */; };
 		B01471751AFF899E007A1100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01471731AFF899E007A1100 /* Main.storyboard */; };
@@ -30,8 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B00F20D81AFFED250010C8DD /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		3064D2CE1C8DE341571E6FBE /* Pods-GuessingGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessingGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuessingGame/Pods-GuessingGame.release.xcconfig"; sourceTree = "<group>"; };
+		66CFE381617A3AB05D842704 /* Pods_GuessingGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessingGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B014716A1AFF899E007A1100 /* GuessingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B014716E1AFF899E007A1100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B014716F1AFF899E007A1100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		B01471851AFF899F007A1100 /* GuessingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameTests.swift; sourceTree = "<group>"; };
 		B014718F1AFF8D60007A1100 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B01471911AFFB3AF007A1100 /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		FDE2E5B9422A7DD832C26C8F /* Pods-GuessingGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessingGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuessingGame/Pods-GuessingGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12521B49E194E0677F228F35 /* Pods_GuessingGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06AEF24A04FA11CB34C4EF08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66CFE381617A3AB05D842704 /* Pods_GuessingGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FFFD4F9BF61C64CD452117E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2E5B9422A7DD832C26C8F /* Pods-GuessingGame.debug.xcconfig */,
+				3064D2CE1C8DE341571E6FBE /* Pods-GuessingGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B01471611AFF899E007A1100 = {
 			isa = PBXGroup;
 			children = (
 				B014716C1AFF899E007A1100 /* GuessingGame */,
 				B01471821AFF899F007A1100 /* GuessingGameTests */,
 				B014716B1AFF899E007A1100 /* Products */,
+				4FFFD4F9BF61C64CD452117E /* Pods */,
+				06AEF24A04FA11CB34C4EF08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +113,6 @@
 				B014716D1AFF899E007A1100 /* Supporting Files */,
 				B014718F1AFF8D60007A1100 /* Game.swift */,
 				B01471911AFFB3AF007A1100 /* GameViewModel.swift */,
-				B00F20D61AFFEB8D0010C8DD /* ViewModel.swift */,
-				B00F20D81AFFED250010C8DD /* Dynamic.swift */,
 			);
 			path = GuessingGame;
 			sourceTree = "<group>";
@@ -131,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01471891AFF899F007A1100 /* Build configuration list for PBXNativeTarget "GuessingGame" */;
 			buildPhases = (
+				A4A880E2C593F82608C2482C /* Check Pods Manifest.lock */,
 				B01471661AFF899E007A1100 /* Sources */,
 				B01471671AFF899E007A1100 /* Frameworks */,
 				B01471681AFF899E007A1100 /* Resources */,
+				C0768803E6AA00E457D46B59 /* Embed Pods Frameworks */,
+				1FCCCBBF8BC8AB8533E0551B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,6 +240,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FCCCBBF8BC8AB8533E0551B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessingGame/Pods-GuessingGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A880E2C593F82608C2482C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0768803E6AA00E457D46B59 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessingGame/Pods-GuessingGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B01471661AFF899E007A1100 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -227,8 +296,6 @@
 				B01471921AFFB3AF007A1100 /* GameViewModel.swift in Sources */,
 				B01471721AFF899E007A1100 /* ViewController.swift in Sources */,
 				B01471901AFF8D60007A1100 /* Game.swift in Sources */,
-				B00F20D91AFFED250010C8DD /* Dynamic.swift in Sources */,
-				B00F20D71AFFEB8D0010C8DD /* ViewModel.swift in Sources */,
 				B01471701AFF899E007A1100 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +423,7 @@
 		};
 		B014718A1AFF899F007A1100 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE2E5B9422A7DD832C26C8F /* Pods-GuessingGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuessingGame/Info.plist;
@@ -366,6 +434,7 @@
 		};
 		B014718B1AFF899F007A1100 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3064D2CE1C8DE341571E6FBE /* Pods-GuessingGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuessingGame/Info.plist;

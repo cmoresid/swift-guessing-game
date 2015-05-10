@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Bond
 
-class GameViewModel : ViewModel {
+class GameViewModel {
     private var game : Game
     private var lower : UInt32
     private var upper : UInt32
